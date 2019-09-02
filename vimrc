@@ -13,15 +13,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline.git'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jalvesaq/Nvim-R.git'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'cocopon/iceberg.vim'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'vim-scripts/ExtractMatches'
-Plugin 'markonm/traces.vim'
-Plugin 'vim-scripts/ingo-library'
-Plugin 'nvie/vim-flake8'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,3 +52,5 @@ set tw=79
 let g:table_mode_corner='|'
 let g:table_mode_header_fillchar='-'
 
+" Map Nerdtree
+map <C-o> :NERDTreeToggle<CR>
