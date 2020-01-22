@@ -1,79 +1,56 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"-------------------------------------------------------------------------------
+" Vundle (MUST BE FIRST)
+"-------------------------------------------------------------------------------
+
+set nocompatible              " be iMproved, required for Vundle
+filetype off                  " required, required for Vundle
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+" Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
+" Custom plugins
 
-Plugin 'vim-airline/vim-airline.git'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'markonm/traces.vim'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'vim-airline/vim-airline.git'     " adds airline
+Plugin 'dhruvasagar/vim-table-mode'      " adds table support
+Plugin 'sheerun/vim-polyglot'            " adds syntax support for languages
+Plugin 'drewtempelmeyer/palenight.vim'   " color scheme
+Plugin 'bronson/vim-trailing-whitespace' " highlights trailing whitespace
+Plugin 'markonm/traces.vim'              " highlights patterns for RegEx
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
-" Display options
-colorscheme iceberg
+"-------------------------------------------------------------------------------
+" Color scheme and fonts
+"-------------------------------------------------------------------------------
+
+set background=dark
+colorscheme palenight
+let g:airline_theme = "palenight"
+
 set guifont=IBM_Plex_Mono:h12
 
-" Editor options
-set nu relativenumber
-syntax on
-set tabstop=2 shiftwidth=2 expandtab
-set linebreak
-set tw=79
+"-------------------------------------------------------------------------------
+" Color scheme and fonts
+"-------------------------------------------------------------------------------
 
-" Set default encoding to UTF-8
-set encoding=utf-8
+set nu                               " set numbering
+syntax on                            " set syntax
+set tabstop=2 shiftwidth=2 expandtab " tabs to spaces
+set linebreak                        " automatic linebreaks
+set tw=79                            " set text width to 79 chars
+set encoding=utf-8                   " set default encoding to UTF-8
+set clipboard=unnamed                " set clipboard to system
+set incsearch                        " start searching at first character input
 
-" Set clipboard to same as system
-set clipboard=unnamed
-
-" Markdown tables
-let g:table_mode_corner='|'
-let g:table_mode_header_fillchar='-'
-
-" Set search highlighting
-set incsearch
+"-------------------------------------------------------------------------------
+" Color scheme and fonts
+"-------------------------------------------------------------------------------
 
 " Remap escape to jk
 inoremap jk <ESC>
@@ -93,3 +70,11 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+"-------------------------------------------------------------------------------
+" Plugin options
+"-------------------------------------------------------------------------------
+
+" Markdown tables
+let g:table_mode_corner='|'
+let g:table_mode_header_fillchar='-'
