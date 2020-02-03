@@ -1,52 +1,53 @@
 "-------------------------------------------------------------------------------
-" Vundle (MUST BE FIRST)
+" Vundle setup (MUST BE FIRST)
 "-------------------------------------------------------------------------------
 
-set nocompatible              " be iMproved, required for Vundle
-filetype off                  " required, required for Vundle
+set nocompatible                        " be iMproved, required for Vundle
+filetype off                            " required, required for Vundle
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 
-" Custom plugins
+Plugin 'VundleVim/Vundle.vim'            " let Vundle manage Vundle, required
 
+"-------------------------------------------------------------------------------
+" Vundle plugins
+"-------------------------------------------------------------------------------
 Plugin 'vim-airline/vim-airline.git'     " adds airline
 Plugin 'dhruvasagar/vim-table-mode'      " adds table support
 Plugin 'sheerun/vim-polyglot'            " adds syntax support for languages
-Plugin 'drewtempelmeyer/palenight.vim'   " color scheme
+Plugin 'dracula/vim'                     " color scheme
 Plugin 'bronson/vim-trailing-whitespace' " highlights trailing whitespace
 Plugin 'markonm/traces.vim'              " highlights patterns for RegEx
 Plugin 'preservim/nerdtree'              " adds tree explorer
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()                        " required
+filetype plugin indent on                " required
 
 "-------------------------------------------------------------------------------
 " Color scheme and fonts
 "-------------------------------------------------------------------------------
 
-set background=dark
-colorscheme palenight
-let g:airline_theme = "palenight"
+"set background=dark
+colorscheme dracula
+let g:airline_theme = "dracula"
 set guifont=IBM_Plex_Mono:h12
 
 "-------------------------------------------------------------------------------
 " Color scheme and fonts
 "-------------------------------------------------------------------------------
 
-set nu                               " set numbering
-syntax on                            " set syntax
-set tabstop=2 shiftwidth=2 expandtab " tabs to spaces
-set linebreak                        " automatic linebreaks
-set tw=79                            " set text width to 79 chars
-set encoding=utf-8                   " set default encoding to UTF-8
-set clipboard=unnamed                " set clipboard to system
-set incsearch                        " start searching at first character input
+set nu relativenumber                    " set numbering
+syntax on                                " set syntax
+set tabstop=2 shiftwidth=2 expandtab     " tabs to spaces
+set linebreak                            " automatic linebreaks
+set tw=79                                " set text width to 79 chars
+set encoding=utf-8                       " set default encoding to UTF-8
+set clipboard=unnamed                    " set clipboard to system
+set incsearch                            " start searching at first input
 
 "-------------------------------------------------------------------------------
 " Color scheme and fonts
@@ -75,7 +76,7 @@ noremap <Right> <nop>
 map <leader>o :NERDTreeToggle<CR>
 
 "-------------------------------------------------------------------------------
-" Macros
+" Functions
 "-------------------------------------------------------------------------------
 
 "-------------------------------------------------------------------------------
