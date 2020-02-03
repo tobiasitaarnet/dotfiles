@@ -2,7 +2,7 @@
 " Vundle setup (MUST BE FIRST)
 "-------------------------------------------------------------------------------
 
-set nocompatible                        " be iMproved, required for Vundle
+set nocompatible                        " be improved, required for Vundle
 filetype off                            " required, required for Vundle
 
 " set the runtime path to include Vundle and initialize
@@ -43,7 +43,7 @@ set guifont=IBM_Plex_Mono:h12
 set nu relativenumber                    " set numbering
 syntax on                                " set syntax
 set tabstop=2 shiftwidth=2 expandtab     " tabs to spaces
-set linebreak                            " automatic linebreaks
+set linebreak                            " automatic line breaks
 set tw=79                                " set text width to 79 chars
 set encoding=utf-8                       " set default encoding to UTF-8
 set clipboard=unnamed                    " set clipboard to system
@@ -60,20 +60,28 @@ inoremap jk <ESC>
 let mapleader = " "
 
 " Remap leader s to set spelling
-nnoremap <leader>sn :set spell spelllang=nb
-nnoremap <leader>se :set spell spelllang=en_us
+nnoremap <leader>sn :set spell! spelllang=nb<CR>
+nnoremap <leader>se :set spell! spelllang=en_us<CR>
 
 " Remap leader f to spellcheck fix to fist match
 nnoremap <leader>f 1z=
 
-" Turn off arrow keys!
+" Quality of life open/close commands
+map <leader>o :browse confirm e<CR>
+map <leader>w :write<CR>
+
+" Remove :w as an option for writing
+cabbrev w Nope
+
+" Turn off arrow keys and escape!!
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+imap <Esc> <nop>
 
 " NERDtree to leader o
-map <leader>o :NERDTreeToggle<CR>
+map <leader>t :NERDTreeToggle<CR>
 
 "-------------------------------------------------------------------------------
 " Functions
